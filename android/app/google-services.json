@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "1945711983",
+    "firebase_url": "https://zed-social-media-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "zed-social-media",
+    "storage_bucket": "zed-social-media.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1945711983:android:6491b6f9e71631f92b649a",
+        "android_client_info": {
+          "package_name": "com.example.zed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1945711983-icvv5g3om9aj6so0bs2rm5h3cus391sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zed",
+            "certificate_hash": "090b82dc35812042d56d30d9b426639e07872b4f"
+          }
+        },
+        {
+          "client_id": "1945711983-s6gee0r1aa2emamkldc3824l6b3d54rt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zed",
+            "certificate_hash": "7ba082350ab7f0eb58064e536547a39b77c0ce9e"
+          }
+        },
+        {
+          "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe2kCPQOlaju9W3CpfGyFTbfAkVt153RM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1945711983-26gt718s6qhs4ll4q1bncucuinrv79ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zed"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1945711983:android:64714ff84bbf46782b649a",
+        "android_client_info": {
+          "package_name": "com.example.zed_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe2kCPQOlaju9W3CpfGyFTbfAkVt153RM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1945711983-26gt718s6qhs4ll4q1bncucuinrv79ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zed"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1945711983:android:074d39bfe55e0d0c2b649a",
+        "android_client_info": {
+          "package_name": "com.mrvl.zed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1945711983-1u29kumaap6s6jobus25i6dfpd4crmh0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrvl.zed",
+            "certificate_hash": "090b82dc35812042d56d30d9b426639e07872b4f"
+          }
+        },
+        {
+          "client_id": "1945711983-lb1thgvaot0jstk7m3da363i1jfsmuk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrvl.zed",
+            "certificate_hash": "62d53cd1deff590837eae8da4427894ff5a655f6"
+          }
+        },
+        {
+          "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe2kCPQOlaju9W3CpfGyFTbfAkVt153RM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1945711983-26gt718s6qhs4ll4q1bncucuinrv79ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zed"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1945711983:android:76e915eba83b9d232b649a",
+        "android_client_info": {
+          "package_name": "com.mrvlapp.zed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe2kCPQOlaju9W3CpfGyFTbfAkVt153RM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1945711983-b3ct9facmfc5v6g1joo5t9ootg4ikrh8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1945711983-26gt718s6qhs4ll4q1bncucuinrv79ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zed"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
