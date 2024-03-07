@@ -11,6 +11,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Responsive.sizeInit(context);
     context.read<SplashBloc>().add(const SplashEvent.startApp());
     return BlocListener<SplashBloc, SplashState>(
       listener: (context, state) {
@@ -34,14 +35,18 @@ class SplashScreen extends StatelessWidget {
             SizedBox(
                 width: Responsive.w,
                 height: Responsive.h,
-                child: const RiveAnimation.asset('assets/splash.riv')),
+                child: const RiveAnimation.asset('assets/splash.riv',
+                    fit: BoxFit.cover)),
             Positioned(
                 top: Responsive.h / 2.5,
                 left: Responsive.w * 0.36,
-                child: const Text(
+                child: Text(
                   "ZED",
-                  // style: customFontStyle(fontWeight: FontWeight.bold, size: 60),
-                ))
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: Responsive.t * 60,
+                      color: Colors.white),
+                )),
           ],
         ),
       ),

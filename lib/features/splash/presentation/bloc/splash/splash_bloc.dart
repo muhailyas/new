@@ -15,7 +15,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
   FutureOr<void> startApp(event, Emitter<SplashState> emit) async {
     final response = await useCase();
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 5));
     if (response is DataSuccess) {
       emit(const SplashState.navigateToRootScreen());
     } else {
