@@ -3,6 +3,6 @@ part of 'auth_bloc.dart';
 @freezed
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.started() = _Started;
-  const factory AuthEvent.loginButtonClicked({required LoginModel loginModel}) =
+  const factory AuthEvent.loginRequested({required LoginModel loginModel}) =
       Login;
 }

@@ -5,6 +5,7 @@ import 'package:zed/core/animations/fade_in_slide.dart';
 import 'package:zed/core/constants/app_colors.dart';
 import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/core/utils/snackbar.dart';
 import 'package:zed/features/authentication/data/models/login_model.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/authentication/presentation/pages/create_account/detail_collecting_screen.dart';
@@ -19,8 +20,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Theme.of(context).colorScheme.background,
       body: Stack(
         children: [
           _buildBackgroundAnimation(),
@@ -118,15 +117,14 @@ class LoginScreen extends StatelessWidget {
                           ),
                           (route) => false);
                     } else if (state is LoginErrorState) {
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text(state.text)));
+                      showSnackBar(context: context, text: state.text);
                     }
                   },
                   builder: (context, state) {
                     return CustomButtonWidget(
                       radius: BorderRadius.circular(Responsive.w * 0.04),
                       ontap: state is LoginLoading
-                          ? null
+                          ? () {}
                           : () {
                               final loginModel = LoginModel(
                                   email: context
@@ -138,10 +136,10 @@ class LoginScreen extends StatelessWidget {
                                       .passwordController
                                       .text);
                               context.read<AuthBloc>().add(
-                                  AuthEvent.loginButtonClicked(
+                                  AuthEvent.loginRequested(
                                       loginModel: loginModel));
                             },
-                      child: state is! LoginLoading
+                      child: state is LoginLoading
                           ? const Padding(
                               padding: EdgeInsets.all(18.0),
                               child: CircularProgressIndicator(

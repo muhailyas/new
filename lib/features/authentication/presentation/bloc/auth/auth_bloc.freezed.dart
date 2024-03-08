@@ -19,38 +19,38 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginModel loginModel) loginButtonClicked,
+    required TResult Function(LoginModel loginModel) loginRequested,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginModel loginModel)? loginButtonClicked,
+    TResult? Function(LoginModel loginModel)? loginRequested,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginModel loginModel)? loginButtonClicked,
+    TResult Function(LoginModel loginModel)? loginRequested,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(Login value) loginButtonClicked,
+    required TResult Function(Login value) loginRequested,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(Login value)? loginButtonClicked,
+    TResult? Function(Login value)? loginRequested,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(Login value)? loginButtonClicked,
+    TResult Function(Login value)? loginRequested,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginModel loginModel) loginButtonClicked,
+    required TResult Function(LoginModel loginModel) loginRequested,
   }) {
     return started();
   }
@@ -121,7 +121,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginModel loginModel)? loginButtonClicked,
+    TResult? Function(LoginModel loginModel)? loginRequested,
   }) {
     return started?.call();
   }
@@ -130,7 +130,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginModel loginModel)? loginButtonClicked,
+    TResult Function(LoginModel loginModel)? loginRequested,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -143,7 +143,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(Login value) loginButtonClicked,
+    required TResult Function(Login value) loginRequested,
   }) {
     return started(this);
   }
@@ -152,7 +152,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(Login value)? loginButtonClicked,
+    TResult? Function(Login value)? loginRequested,
   }) {
     return started?.call(this);
   }
@@ -161,7 +161,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(Login value)? loginButtonClicked,
+    TResult Function(Login value)? loginRequested,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -216,7 +216,7 @@ class _$LoginImpl implements Login {
 
   @override
   String toString() {
-    return 'AuthEvent.loginButtonClicked(loginModel: $loginModel)';
+    return 'AuthEvent.loginRequested(loginModel: $loginModel)';
   }
 
   @override
@@ -241,29 +241,29 @@ class _$LoginImpl implements Login {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginModel loginModel) loginButtonClicked,
+    required TResult Function(LoginModel loginModel) loginRequested,
   }) {
-    return loginButtonClicked(loginModel);
+    return loginRequested(loginModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginModel loginModel)? loginButtonClicked,
+    TResult? Function(LoginModel loginModel)? loginRequested,
   }) {
-    return loginButtonClicked?.call(loginModel);
+    return loginRequested?.call(loginModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginModel loginModel)? loginButtonClicked,
+    TResult Function(LoginModel loginModel)? loginRequested,
     required TResult orElse(),
   }) {
-    if (loginButtonClicked != null) {
-      return loginButtonClicked(loginModel);
+    if (loginRequested != null) {
+      return loginRequested(loginModel);
     }
     return orElse();
   }
@@ -272,29 +272,29 @@ class _$LoginImpl implements Login {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(Login value) loginButtonClicked,
+    required TResult Function(Login value) loginRequested,
   }) {
-    return loginButtonClicked(this);
+    return loginRequested(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(Login value)? loginButtonClicked,
+    TResult? Function(Login value)? loginRequested,
   }) {
-    return loginButtonClicked?.call(this);
+    return loginRequested?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(Login value)? loginButtonClicked,
+    TResult Function(Login value)? loginRequested,
     required TResult orElse(),
   }) {
-    if (loginButtonClicked != null) {
-      return loginButtonClicked(this);
+    if (loginRequested != null) {
+      return loginRequested(this);
     }
     return orElse();
   }

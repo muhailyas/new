@@ -11,9 +11,11 @@ class SplashRespositoryImpl implements SplashRepository {
   Future<DataState<User>> isUserExisting() async {
     try {
       final user = await splashDataSource.isUserExist();
-      return user != null ? DataSuccess(user) : DataFailed(Exception());
+      return user != null
+          ? DataSuccess(user)
+          : const DataFailed('user not logged in');
     } catch (e) {
-      return DataFailed(Exception(e));
+      return DataFailed(e.toString());
     }
   }
 }

@@ -94,7 +94,7 @@ class OnBoardScreen extends StatelessWidget {
             Text(
               "Welcome to ZED! Join our vibrant community and connect with friends around the world.",
               style: TextStyle(
-                fontWeight: FontWeight.w200,
+                fontWeight: FontWeight.w500,
                 fontSize: Responsive.t * 25,
                 color: Theme.of(context).colorScheme.onSecondary,
               ),

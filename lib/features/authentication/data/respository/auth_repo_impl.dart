@@ -18,13 +18,31 @@ class AuthenticationRepoImpl implements AuthenticationRepository {
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case 'email-already-in-use':
-          return DataFailed(Exception(e.message));
+          return const DataFailed('Email already exist');
         case 'invalid-email':
-          return DataFailed(Exception(e.message));
-        case 'weak-password':
-          return DataFailed(Exception(e.message));
+          return const DataFailed(
+              'Invalid email address. Please enter a valid email.');
+        case 'wrong-password':
+          return const DataFailed('Invalid password. Please try again.');
+        case 'user-not-found':
+          return const DataFailed(
+              'User not found. Please check your email and try again.');
+        case 'invalid-credential':
+          return const DataFailed('Email or password is incorrect');
+        case 'network-request-failed':
+          return const DataFailed(
+              'Network error. Please check your internet connection and try again.');
+        case 'too-many-requests':
+          return const DataFailed(
+              'Too many requests. Please wait for some time and try again.');
+        case 'operation-not-allowed':
+          return const DataFailed(
+              'Email and password accounts are not enabled. Please contact the administrator.');
+        case 'user-disabled':
+          return const DataFailed(
+              'Your account has been disabled. Please contact the support team.');
         default:
-          return DataFailed(Exception(e.message));
+          return DataFailed(e.message.toString());
       }
     }
   }

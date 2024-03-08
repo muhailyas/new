@@ -35,6 +35,7 @@ class AuthInputField extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           child: TextField(
+            controller: controller,
             style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary.withOpacity(.8)),
             cursorColor: Theme.of(context).colorScheme.secondary,

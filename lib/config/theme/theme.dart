@@ -4,6 +4,7 @@ import 'package:zed/core/constants/app_colors.dart';
 
 class UiThemeConfig {
   static ThemeData lightTheme = ThemeData(
+      scaffoldBackgroundColor: AppColors.lightColor,
       brightness: Brightness.light,
       fontFamily: GoogleFonts.aBeeZee().fontFamily,
       colorScheme: ColorScheme.light(
@@ -15,6 +16,8 @@ class UiThemeConfig {
         shadow: AppColors.lightBluredColor.withOpacity(0.1),
       ));
   static ThemeData darkTheme = ThemeData(
+
+      scaffoldBackgroundColor: AppColors.darkColor,
       fontFamily: GoogleFonts.aBeeZee().fontFamily,
       brightness: Brightness.dark,
       colorScheme: const ColorScheme.dark(

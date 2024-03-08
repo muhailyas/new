@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zed/core/responsive/responsive.dart';
 import 'package:rive/rive.dart';
-import 'package:zed/features/authentication/presentation/pages/login_screen.dart';
+import 'package:zed/features/authentication/presentation/pages/onboard_screen.dart';
 import 'package:zed/features/home/presentation/pages/root_screen.dart';
 import 'package:zed/features/splash/presentation/bloc/splash/splash_bloc.dart';
 
@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
+                builder: (context) => const OnBoardScreen(),
               ));
         } else {
           Navigator.pushAndRemoveUntil(

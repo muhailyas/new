@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zed/features/home/presentation/widgets/bottom_nav.dart';
 
 class RootScreen extends StatelessWidget {
   const RootScreen({super.key});
@@ -9,6 +10,7 @@ class RootScreen extends StatelessWidget {
       body: Center(
         child: Text("Root screen"),
       ),
+      bottomNavigationBar: BottomNavigationWidget(),
     );
   }
 }
