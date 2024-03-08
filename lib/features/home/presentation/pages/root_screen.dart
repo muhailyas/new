@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zed/features/home/presentation/bloc/bottom_nav/bottomnavigation_bloc.dart';
 import 'package:zed/features/home/presentation/widgets/bottom_nav.dart';
 
 class RootScreen extends StatelessWidget {
@@ -6,11 +8,13 @@ class RootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Root screen"),
+    return Scaffold(
+      body: BlocBuilder<BottomnavigationBloc, BottomnavigationState>(
+        builder: (context, state) {
+          return BottomnavigationBloc.screens[state.index];
+        },
       ),
-      bottomNavigationBar: BottomNavigationWidget(),
+      bottomNavigationBar: const BottomNavigationWidget(),
     );
   }
 }

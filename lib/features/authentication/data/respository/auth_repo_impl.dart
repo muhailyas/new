@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:zed/core/resources/data_state.dart';
 import 'package:zed/features/authentication/data/data_sources/auth_data_sources.dart';
 import 'package:zed/features/authentication/data/models/login_model.dart';
+import 'package:zed/features/authentication/data/models/signup_model.dart';
 import 'package:zed/features/authentication/domain/entity/login_entity.dart';
+import 'package:zed/features/authentication/domain/entity/signup_entity.dart';
 import 'package:zed/features/authentication/domain/repository/auth_repo.dart';
 
 class AuthenticationRepoImpl implements AuthenticationRepository {
@@ -43,6 +45,49 @@ class AuthenticationRepoImpl implements AuthenticationRepository {
               'Your account has been disabled. Please contact the support team.');
         default:
           return DataFailed(e.message.toString());
+      }
+    }
+  }
+
+  @override
+  Future<DataState> continueWithGoogle() async {
+    try {
+      final response = await _authDataSource.signInWithGoogle();
+      final user = response.user;
+      return DataSuccess(SignUpEntity(
+          email: user!.email!,
+          confirmPassword: '',
+          password: '',
+          username: user.displayName!));
+    } catch (e) {
+      return DataFailed(e.toString());
+    }
+  }
+
+  @override
+  Future<DataState<SignUpEntity>> signUpWithEmailAndPassword(
+      {required SignUpModel signUpModel}) async {
+    try {
+      final response =
+          await _authDataSource.signUpWithEmail(signUp: signUpModel);
+      final user = response.user;
+      return DataSuccess(SignUpModel(
+          email: user!.email!,
+          password: '',
+          username: '',
+          confirmPassword: ''));
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        case 'email-already-in-use':
+          return const DataFailed(
+              'Email already existing. Please check your email and try again.');
+        case 'weak-password':
+          return const DataFailed('Weak password. Please try again.');
+        case 'invalid-email':
+          return const DataFailed(
+              'Invalid email address. Please enter a valid email.');
+        default:
+          return const DataFailed('An error occurred. Please try again later.');
       }
     }
   }

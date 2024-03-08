@@ -5,9 +5,10 @@ import 'package:zed/config/theme/theme.dart';
 import 'package:zed/core/responsive/responsive.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/home/presentation/bloc/bottom_nav/bottomnavigation_bloc.dart';
+import 'package:zed/features/home/presentation/pages/root_screen.dart';
 import 'package:zed/features/injection_container.dart';
 import 'package:zed/features/splash/presentation/bloc/splash/splash_bloc.dart';
-import 'package:zed/features/splash/presentation/pages/splash.dart';
+// import 'package:zed/features/splash/presentation/pages/splash.dart';
 import 'package:zed/firebase_options.dart';
 
 void main() async {
@@ -39,10 +40,12 @@ class Zed extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Zed 0.1',
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         theme: UiThemeConfig.lightTheme,
         darkTheme: UiThemeConfig.darkTheme,
-        home: const SplashScreen(),
+        // home: const SplashScreen(),
+        home: const RootScreen(),
       ),
     );
   }
