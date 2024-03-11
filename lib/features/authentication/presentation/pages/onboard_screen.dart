@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zed/core/animations/fade_in_slide.dart';
 import 'package:zed/core/constants/app_colors.dart';
 import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/core/utils/snackbar.dart';
+import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/authentication/presentation/pages/login_screen.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
 import 'package:zed/features/authentication/presentation/widgets/custom_button_widget.dart';
+import 'package:zed/features/home/presentation/pages/root_screen.dart';
 
 class OnBoardScreen extends StatelessWidget {
   const OnBoardScreen({super.key});
@@ -32,16 +36,39 @@ class OnBoardScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CustomButtonWidget(
-              ontap: () {},
-              radius: BorderRadius.circular(Responsive.w * 0.04),
-              child: const Text(
-                "Continue with Google",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.lightColor,
-                ),
-              ),
+            BlocConsumer<AuthBloc, AuthState>(
+              listener: (context, state) {
+                if (state is GoogleAuthSuccessState) {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RootScreen(),
+                      ),
+                      (route) => false);
+                } else if (state is GoogleAuthErrorErrorState) {
+                  showSnackBar(context: context, text: state.text);
+                }
+              },
+              builder: (context, state) {
+                return CustomButtonWidget(
+                  ontap: () {
+                    context
+                        .read<AuthBloc>()
+                        .add(const AuthEvent.googleAuthRequested());
+                  },
+                  radius: BorderRadius.circular(Responsive.w * 0.04),
+                  child: state is LoginLoading
+                      ? const CircularProgressIndicator(
+                          color: AppColors.lightColor)
+                      : const Text(
+                          "Continue with Google",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.lightColor,
+                          ),
+                        ),
+                );
+              },
             ),
             AppConst.height5,
             CustomButtonWidget(
