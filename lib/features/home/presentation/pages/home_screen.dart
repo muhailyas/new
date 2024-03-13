@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:zed/core/animations/fade_in_slide.dart';
 import 'package:zed/core/constants/dummy_datas.dart';
@@ -63,7 +64,11 @@ class HomeScreen extends StatelessWidget {
             "Zed",
             style: TextStyle(fontSize: Responsive.t * 40),
           ),
-          const Icon(Icons.message, size: 25),
+          InkWell(
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+              },
+              child: const Icon(Icons.message, size: 25)),
         ],
       ),
     );

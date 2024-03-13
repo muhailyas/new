@@ -6,6 +6,7 @@ import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
 import 'package:zed/core/utils/snackbar.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
+import 'package:zed/features/authentication/presentation/pages/create_account/detail_collecting_screen.dart';
 import 'package:zed/features/authentication/presentation/pages/login_screen.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
 import 'package:zed/features/authentication/presentation/widgets/custom_button_widget.dart';
@@ -89,7 +90,12 @@ class OnBoardScreen extends StatelessWidget {
             ),
             AppConst.height5,
             CustomButtonWidget(
-              ontap: () {},
+              ontap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DetailCollectingScreen()));
+              },
               radius: BorderRadius.circular(Responsive.w * 0.04),
               isOutLineOnly: true,
               child: const Text(
