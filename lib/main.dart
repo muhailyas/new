@@ -5,7 +5,7 @@ import 'package:zed/config/theme/theme.dart';
 import 'package:zed/core/responsive/responsive.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/home/presentation/bloc/bottom_nav/bottomnavigation_bloc.dart';
-// import 'package:zed/features/home/presentation/pages/root_screen.dart';
+import 'package:zed/features/home/presentation/bloc/home/home_bloc.dart';
 import 'package:zed/features/injection_container.dart';
 import 'package:zed/features/splash/presentation/bloc/splash/splash_bloc.dart';
 import 'package:zed/features/splash/presentation/pages/splash.dart';
@@ -36,6 +36,9 @@ class Zed extends StatelessWidget {
         ),
         BlocProvider<BottomnavigationBloc>(
           create: (context) => DI.sl(),
+        ),
+        BlocProvider<HomeBloc>(
+          create: (context) => DI.sl(),
         )
       ],
       child: MaterialApp(
@@ -45,7 +48,7 @@ class Zed extends StatelessWidget {
         theme: UiThemeConfig.lightTheme,
         darkTheme: UiThemeConfig.darkTheme,
         home: const SplashScreen(),
-        // home: const RootScreen(),
+        // home: CompleteAccountCreate(),
       ),
     );
   }

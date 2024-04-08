@@ -29,12 +29,12 @@ class SearchScreen extends StatelessWidget {
         behavior: const ScrollBehavior().copyWith(overscroll: false),
         child: GridView.custom(
           gridDelegate: SliverQuiltedGridDelegate(
-            crossAxisCount: 11,
+            crossAxisCount: 9,
             mainAxisSpacing: 1,
             crossAxisSpacing: 1,
             repeatPattern: QuiltedGridRepeatPattern.inverted,
             pattern: [
-              const QuiltedGridTile(6, 5),
+              const QuiltedGridTile(6, 3),
               const QuiltedGridTile(3, 3),
               const QuiltedGridTile(3, 3),
               const QuiltedGridTile(3, 3),

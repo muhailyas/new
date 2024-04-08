@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/core/utils/validators.dart';
 
 class AuthInputField extends StatelessWidget {
   const AuthInputField({
@@ -10,12 +11,14 @@ class AuthInputField extends StatelessWidget {
     required this.iconData,
     required this.hintText,
     required this.controller,
+    this.onChanged,
   });
   final bool isPassword;
   final bool isEmail;
   final IconData iconData;
   final String hintText;
   final TextEditingController controller;
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,16 @@ class AuthInputField extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondary.withOpacity(.05),
             borderRadius: BorderRadius.circular(15),
           ),
-          child: TextField(
+          child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return fieldIsEmpty(controller, context);
+              } else if (!validation(context, value, controller)) {
+                return validationResult(context, controller);
+              }
+              return null;
+            },
+            onChanged: onChanged,
             controller: controller,
             style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary.withOpacity(.8)),

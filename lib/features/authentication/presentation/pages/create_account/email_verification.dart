@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zed/core/constants/app_assets.dart';
 import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/authentication/presentation/pages/create_account/complete_account_create.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
 
@@ -14,6 +16,7 @@ class EmailVerification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<AuthBloc>().add(const AuthEvent.verifyEmail());
     return WillPopScope(
       onWillPop: () async {
         // if the user try to exit from the screen the created account should be deleted
@@ -67,19 +70,30 @@ class EmailVerification extends StatelessWidget {
                   ),
                   AppConst.height10,
                   const Spacer(),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const CompleteAccountCreate()));
+                  BlocListener<AuthBloc, AuthState>(
+                      listener: (context, state) {
+                        if (state is EmailVerified) {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CompleteAccountCreate(),
+                              ));
+                        }
                       },
-                      child: Text(
-                        "Resend email",
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.onSecondary),
-                      )),
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        CompleteAccountCreate()));
+                          },
+                          child: Text(
+                            "Resend email",
+                            style: TextStyle(
+                                color:
+                                    Theme.of(context).colorScheme.onSecondary),
+                          ))),
                   AppConst.height10,
                 ],
               ),

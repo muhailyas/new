@@ -18,34 +18,7 @@ class AuthenticationRepoImpl implements AuthenticationRepository {
       return DataSuccess(LoginEntity(
           email: response.user!.email ?? '', password: response.user!.uid));
     } on FirebaseAuthException catch (e) {
-      switch (e.code) {
-        case 'email-already-in-use':
-          return const DataFailed('Email already exist');
-        case 'invalid-email':
-          return const DataFailed(
-              'Invalid email address. Please enter a valid email.');
-        case 'wrong-password':
-          return const DataFailed('Invalid password. Please try again.');
-        case 'user-not-found':
-          return const DataFailed(
-              'User not found. Please check your email and try again.');
-        case 'invalid-credential':
-          return const DataFailed('Email or password is incorrect');
-        case 'network-request-failed':
-          return const DataFailed(
-              'Network error. Please check your internet connection and try again.');
-        case 'too-many-requests':
-          return const DataFailed(
-              'Too many requests. Please wait for some time and try again.');
-        case 'operation-not-allowed':
-          return const DataFailed(
-              'Email and password accounts are not enabled. Please contact the administrator.');
-        case 'user-disabled':
-          return const DataFailed(
-              'Your account has been disabled. Please contact the support team.');
-        default:
-          return DataFailed(e.message.toString());
-      }
+      return _handleAuthException<LoginEntity>(e);
     }
   }
 
@@ -77,18 +50,75 @@ class AuthenticationRepoImpl implements AuthenticationRepository {
           username: '',
           confirmPassword: ''));
     } on FirebaseAuthException catch (e) {
-      switch (e.code) {
-        case 'email-already-in-use':
-          return const DataFailed(
-              'Email already existing. Please check your email and try again.');
-        case 'weak-password':
-          return const DataFailed('Weak password. Please try again.');
-        case 'invalid-email':
-          return const DataFailed(
-              'Invalid email address. Please enter a valid email.');
-        default:
-          return const DataFailed('An error occurred. Please try again later.');
+      return _handleAuthException<SignUpEntity>(e);
+    }
+  }
+
+  @override
+  Future<void> sendVerificationEmail() async {
+    try {
+      await _authDataSource.sendEmailForVerification();
+    } catch (e) {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<DataState<bool>> verifyEmail() async {
+    try {
+      final response = await _authDataSource.verifyEmail();
+      if (response) {
+        return const DataSuccess(true);
       }
+      return const DataFailed('something went wrong');
+    } catch (e) {
+      return const DataFailed('something went wrong');
+    }
+  }
+
+  @override
+  Future<DataState<bool>> checkNewUser() async {
+    try {
+      final response = await _authDataSource.checkNewUser();
+      if (response) {
+        return const DataSuccess(true);
+      } else {
+        return const DataSuccess(false);
+      }
+    } catch (e) {
+      return const DataFailed('failed');
+    }
+  }
+
+  DataState<T> _handleAuthException<T>(FirebaseAuthException e) {
+    switch (e.code) {
+      case 'email-already-in-use':
+        return const DataFailed('The email address is already in use');
+      case 'invalid-email':
+        return const DataFailed(
+            'Invalid email address. Please enter a valid email.');
+      case 'wrong-password':
+        return const DataFailed('Incorrect password. Please try again.');
+      case 'user-not-found':
+        return const DataFailed(
+            'User not found. Please check your email and try again.');
+      case 'invalid-credential':
+        return const DataFailed('Invalid email or password');
+      case 'network-request-failed':
+        return const DataFailed(
+            'Network error. Please check your internet connection and try again.');
+      case 'too-many-requests':
+        return const DataFailed(
+            'Too many login attempts. Please try again later.');
+      case 'operation-not-allowed':
+        return const DataFailed(
+            'Email and password accounts are not enabled. Please contact the administrator.');
+      case 'user-disabled':
+        return const DataFailed(
+            'Your account has been disabled. Please contact the support team.');
+      default:
+        return DataFailed(
+            e.message ?? 'An error occurred. Please try again later.');
     }
   }
 }

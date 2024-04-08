@@ -1,18 +1,25 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zed/core/animations/fade_in_slide.dart';
 import 'package:zed/core/constants/app_colors.dart';
 import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/core/utils/snackbar.dart';
+import 'package:zed/features/authentication/data/models/signup_model.dart';
+import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/authentication/presentation/pages/create_account/email_verification.dart';
 import 'package:zed/features/authentication/presentation/widgets/auth_text_field_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
+import 'package:zed/features/authentication/presentation/widgets/circular_bar_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/custom_button_widget.dart';
+import 'package:zed/features/authentication/presentation/widgets/terms_condition_accept_widget.dart';
 
 class DetailCollectingScreen extends StatelessWidget {
   const DetailCollectingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authbloc = BlocProvider.of<AuthBloc>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -21,14 +28,17 @@ class DetailCollectingScreen extends StatelessWidget {
           SafeArea(
             child: Padding(
               padding: EdgeInsets.all(Responsive.w * 0.05),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildContentText(context),
-                  _buildInputFields(),
-                  _buildAgreeTermsAndConditionsRow(),
-                  _buildCreateAccountButton(context)
-                ],
+              child: FadeInSlide(
+                duration: 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildContentText(context),
+                    _buildInputFields(authbloc),
+                    _buildAgreeTermsAndConditions(),
+                    _buildCreateAccountButton(context, authbloc)
+                  ],
+                ),
               ),
             ),
           )
@@ -37,21 +47,39 @@ class DetailCollectingScreen extends StatelessWidget {
     );
   }
 
-  CustomButtonWidget _buildCreateAccountButton(BuildContext context) {
-    return CustomButtonWidget(
-        radius: BorderRadius.circular(Responsive.w * 0.04),
-        ontap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const EmailVerification(
-                    fullName: '',
-                    email: 'ilyasMuhammed@gmail.com',
-                  )));
-        },
-        child: const Text(
-          "Create account",
-          style: TextStyle(
-              color: AppColors.lightColor, fontWeight: FontWeight.bold),
-        ));
+  Widget _buildCreateAccountButton(BuildContext context, AuthBloc authBloc) {
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state is SignUpSuccessState) {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EmailVerification(
+                  fullName: authBloc.fullnameController.text.trim(),
+                  email: authBloc.emailController.text.trim()),
+            ),
+            (route) => false,
+          );
+        } else if (state is SignUpErrorState) {
+          showSnackBar(context: context, text: state.text);
+        }
+      },
+      builder: (context, state) {
+        return CustomButtonWidget(
+            radius: BorderRadius.circular(Responsive.w * 0.04),
+            ontap: () {
+              validateInput(context, authBloc);
+            },
+            child: state is LoginLoading
+                ? const CustomCircularIndicator()
+                : const Text(
+                    "Create account",
+                    style: TextStyle(
+                        color: AppColors.lightColor,
+                        fontWeight: FontWeight.bold),
+                  ));
+      },
+    );
   }
 
   Column _buildContentText(BuildContext context) {
@@ -73,58 +101,77 @@ class DetailCollectingScreen extends StatelessWidget {
     );
   }
 
-  Row _buildAgreeTermsAndConditionsRow() {
-    return Row(
-      children: [
-        Checkbox(
-          value: true,
-          onChanged: (value) {},
-          activeColor: AppColors.blueColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        ),
-        const Expanded(
-            child: AutoSizeText.rich(
-          maxLines: 1,
-          TextSpan(text: 'I agree to Zed ', children: [
-            TextSpan(
-                text: 'Terms and Conditions',
-                style: TextStyle(color: AppColors.blueColor))
-          ]),
-        )),
-      ],
-    );
-  }
+  Widget _buildAgreeTermsAndConditions() =>
+      const TermsAndConditionAcceptWidget();
 
-  Column _buildInputFields() {
+  Widget _buildInputFields(AuthBloc authBloc) {
     return Column(
       children: [
         AppConst.height40,
         AuthInputField(
           iconData: Icons.email,
           hintText: 'Fullname',
-          controller: TextEditingController(),
+          controller: authBloc.fullnameController,
         ),
         AppConst.height10,
         AuthInputField(
           iconData: Icons.email,
           hintText: 'Email',
-          controller: TextEditingController(),
+          controller: authBloc.emailController,
           isEmail: true,
         ),
         AppConst.height10,
         AuthInputField(
             iconData: Icons.lock,
             hintText: 'Password',
-            controller: TextEditingController(),
+            controller: authBloc.passwordController,
             isPassword: true),
         AppConst.height10,
         AuthInputField(
           iconData: Icons.lock,
           hintText: 'ConfirmPassword',
-          controller: TextEditingController(),
+          controller: authBloc.confirmPasswordController,
           isPassword: true,
         ),
       ],
     );
+  }
+
+  void validateInput(BuildContext context, AuthBloc authBloc) {
+    final fullname = authBloc.fullnameController.text;
+    final email = authBloc.emailController.text;
+    final password = authBloc.passwordController.text;
+    final confirmPassword = authBloc.confirmPasswordController.text;
+
+    if (fullname.isEmpty ||
+        email.isEmpty ||
+        password.isEmpty ||
+        confirmPassword.isEmpty) {
+      showSnackBar(context: context, text: 'Please fill all the fields.');
+      return;
+    }
+
+    if (!AuthBloc.termsAndConditionAccept) {
+      showSnackBar(
+          context: context,
+          text: 'You must agree to the terms and conditions to continue.');
+      return;
+    }
+
+    if (password != confirmPassword) {
+      showSnackBar(context: context, text: 'Passwords do not match.');
+      return;
+    }
+
+    final signUpModel = SignUpModel(
+      email: email.trim(),
+      username: authBloc.usernameController.text.trim(),
+      password: password.trim(),
+      confirmPassword: confirmPassword.trim(),
+    );
+
+    context
+        .read<AuthBloc>()
+        .add(AuthEvent.signUpRequested(signUpModel: signUpModel));
   }
 }

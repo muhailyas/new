@@ -1,11 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/constants/dummy_datas.dart';
 import 'package:zed/core/responsive/responsive.dart';
+import 'package:zed/features/post/domain/entity/post_entity.dart';
 
 class PostShowWidget extends StatelessWidget {
-  const PostShowWidget({super.key, required this.index});
-  final int index;
+  const PostShowWidget({super.key, required this.post});
+  final PostEntity post;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class PostShowWidget extends StatelessWidget {
               backgroundImage: NetworkImage(images[3]),
             ),
             AppConst.width10,
-            const Text("Username"),
+            Text(post.username),
             const Spacer(),
             const Icon(Icons.more_vert)
           ],
@@ -29,7 +31,7 @@ class PostShowWidget extends StatelessWidget {
           constraints: BoxConstraints(
             maxHeight: Responsive.h,
           ),
-          child: Image.network(images[index]),
+          child: Image.network(post.postUrl),
         ),
         AppConst.height10,
         Row(
@@ -42,14 +44,17 @@ class PostShowWidget extends StatelessWidget {
             AppConst.width10,
             const Icon(Icons.send_rounded),
             const Spacer(),
-            const Icon(Icons.bookmark_border_rounded),
+            post.savedIds.contains(FirebaseAuth.instance.currentUser!.uid)
+                ? const Icon(Icons.bookmark_rounded)
+                : const Icon(Icons.bookmark_border_rounded),
           ],
         ),
+        if (post.likes.isNotEmpty) AppConst.height5,
+        if (post.likes.isNotEmpty) Text("${post.likes.length} likes"),
+        if (post.likes.isNotEmpty) AppConst.height5,
+        if (post.caption.isNotEmpty) Text(post.caption),
         AppConst.height5,
-        const Text(
-            "Chasing adventures and laughter, one memory at a time! 🎉✨ #GoodTimes #MakingMemories"),
-        AppConst.height5,
-        Text("${index + 1} hours ago"),
+        Text("${post.dateTime.hour} hours ago"),
         AppConst.height10,
       ],
     );

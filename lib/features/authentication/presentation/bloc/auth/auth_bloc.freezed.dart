@@ -22,6 +22,11 @@ mixin _$AuthEvent {
     required TResult Function(LoginModel loginModel) loginRequested,
     required TResult Function(SignUpModel signUpModel) signUpRequested,
     required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +35,10 @@ mixin _$AuthEvent {
     TResult? Function(LoginModel loginModel)? loginRequested,
     TResult? Function(SignUpModel signUpModel)? signUpRequested,
     TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +47,10 @@ mixin _$AuthEvent {
     TResult Function(LoginModel loginModel)? loginRequested,
     TResult Function(SignUpModel signUpModel)? signUpRequested,
     TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +60,11 @@ mixin _$AuthEvent {
     required TResult Function(Login value) loginRequested,
     required TResult Function(SignUp value) signUpRequested,
     required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +73,10 @@ mixin _$AuthEvent {
     TResult? Function(Login value)? loginRequested,
     TResult? Function(SignUp value)? signUpRequested,
     TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +85,10 @@ mixin _$AuthEvent {
     TResult Function(Login value)? loginRequested,
     TResult Function(SignUp value)? signUpRequested,
     TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +153,11 @@ class _$StartedImpl implements _Started {
     required TResult Function(LoginModel loginModel) loginRequested,
     required TResult Function(SignUpModel signUpModel) signUpRequested,
     required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
   }) {
     return started();
   }
@@ -138,6 +169,10 @@ class _$StartedImpl implements _Started {
     TResult? Function(LoginModel loginModel)? loginRequested,
     TResult? Function(SignUpModel signUpModel)? signUpRequested,
     TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
   }) {
     return started?.call();
   }
@@ -149,6 +184,10 @@ class _$StartedImpl implements _Started {
     TResult Function(LoginModel loginModel)? loginRequested,
     TResult Function(SignUpModel signUpModel)? signUpRequested,
     TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,6 +203,11 @@ class _$StartedImpl implements _Started {
     required TResult Function(Login value) loginRequested,
     required TResult Function(SignUp value) signUpRequested,
     required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
   }) {
     return started(this);
   }
@@ -175,6 +219,10 @@ class _$StartedImpl implements _Started {
     TResult? Function(Login value)? loginRequested,
     TResult? Function(SignUp value)? signUpRequested,
     TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
   }) {
     return started?.call(this);
   }
@@ -186,6 +234,10 @@ class _$StartedImpl implements _Started {
     TResult Function(Login value)? loginRequested,
     TResult Function(SignUp value)? signUpRequested,
     TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -268,6 +320,11 @@ class _$LoginImpl implements Login {
     required TResult Function(LoginModel loginModel) loginRequested,
     required TResult Function(SignUpModel signUpModel) signUpRequested,
     required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
   }) {
     return loginRequested(loginModel);
   }
@@ -279,6 +336,10 @@ class _$LoginImpl implements Login {
     TResult? Function(LoginModel loginModel)? loginRequested,
     TResult? Function(SignUpModel signUpModel)? signUpRequested,
     TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
   }) {
     return loginRequested?.call(loginModel);
   }
@@ -290,6 +351,10 @@ class _$LoginImpl implements Login {
     TResult Function(LoginModel loginModel)? loginRequested,
     TResult Function(SignUpModel signUpModel)? signUpRequested,
     TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (loginRequested != null) {
@@ -305,6 +370,11 @@ class _$LoginImpl implements Login {
     required TResult Function(Login value) loginRequested,
     required TResult Function(SignUp value) signUpRequested,
     required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
   }) {
     return loginRequested(this);
   }
@@ -316,6 +386,10 @@ class _$LoginImpl implements Login {
     TResult? Function(Login value)? loginRequested,
     TResult? Function(SignUp value)? signUpRequested,
     TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
   }) {
     return loginRequested?.call(this);
   }
@@ -327,6 +401,10 @@ class _$LoginImpl implements Login {
     TResult Function(Login value)? loginRequested,
     TResult Function(SignUp value)? signUpRequested,
     TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (loginRequested != null) {
@@ -414,6 +492,11 @@ class _$SignUpImpl implements SignUp {
     required TResult Function(LoginModel loginModel) loginRequested,
     required TResult Function(SignUpModel signUpModel) signUpRequested,
     required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
   }) {
     return signUpRequested(signUpModel);
   }
@@ -425,6 +508,10 @@ class _$SignUpImpl implements SignUp {
     TResult? Function(LoginModel loginModel)? loginRequested,
     TResult? Function(SignUpModel signUpModel)? signUpRequested,
     TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
   }) {
     return signUpRequested?.call(signUpModel);
   }
@@ -436,6 +523,10 @@ class _$SignUpImpl implements SignUp {
     TResult Function(LoginModel loginModel)? loginRequested,
     TResult Function(SignUpModel signUpModel)? signUpRequested,
     TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (signUpRequested != null) {
@@ -451,6 +542,11 @@ class _$SignUpImpl implements SignUp {
     required TResult Function(Login value) loginRequested,
     required TResult Function(SignUp value) signUpRequested,
     required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
   }) {
     return signUpRequested(this);
   }
@@ -462,6 +558,10 @@ class _$SignUpImpl implements SignUp {
     TResult? Function(Login value)? loginRequested,
     TResult? Function(SignUp value)? signUpRequested,
     TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
   }) {
     return signUpRequested?.call(this);
   }
@@ -473,6 +573,10 @@ class _$SignUpImpl implements SignUp {
     TResult Function(Login value)? loginRequested,
     TResult Function(SignUp value)? signUpRequested,
     TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (signUpRequested != null) {
@@ -534,6 +638,11 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     required TResult Function(LoginModel loginModel) loginRequested,
     required TResult Function(SignUpModel signUpModel) signUpRequested,
     required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
   }) {
     return googleAuthRequested();
   }
@@ -545,6 +654,10 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     TResult? Function(LoginModel loginModel)? loginRequested,
     TResult? Function(SignUpModel signUpModel)? signUpRequested,
     TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
   }) {
     return googleAuthRequested?.call();
   }
@@ -556,6 +669,10 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     TResult Function(LoginModel loginModel)? loginRequested,
     TResult Function(SignUpModel signUpModel)? signUpRequested,
     TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (googleAuthRequested != null) {
@@ -571,6 +688,11 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     required TResult Function(Login value) loginRequested,
     required TResult Function(SignUp value) signUpRequested,
     required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
   }) {
     return googleAuthRequested(this);
   }
@@ -582,6 +704,10 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     TResult? Function(Login value)? loginRequested,
     TResult? Function(SignUp value)? signUpRequested,
     TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
   }) {
     return googleAuthRequested?.call(this);
   }
@@ -593,6 +719,10 @@ class _$GoogleAuthRequestedImpl implements _GoogleAuthRequested {
     TResult Function(Login value)? loginRequested,
     TResult Function(SignUp value)? signUpRequested,
     TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
     required TResult orElse(),
   }) {
     if (googleAuthRequested != null) {
@@ -607,6 +737,637 @@ abstract class _GoogleAuthRequested implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$SendVerificationEmailImplCopyWith<$Res> {
+  factory _$$SendVerificationEmailImplCopyWith(
+          _$SendVerificationEmailImpl value,
+          $Res Function(_$SendVerificationEmailImpl) then) =
+      __$$SendVerificationEmailImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SendVerificationEmailImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SendVerificationEmailImpl>
+    implements _$$SendVerificationEmailImplCopyWith<$Res> {
+  __$$SendVerificationEmailImplCopyWithImpl(_$SendVerificationEmailImpl _value,
+      $Res Function(_$SendVerificationEmailImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SendVerificationEmailImpl implements _SendVerificationEmail {
+  const _$SendVerificationEmailImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.sendVerificationEmail()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendVerificationEmailImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(LoginModel loginModel) loginRequested,
+    required TResult Function(SignUpModel signUpModel) signUpRequested,
+    required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
+  }) {
+    return sendVerificationEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(LoginModel loginModel)? loginRequested,
+    TResult? Function(SignUpModel signUpModel)? signUpRequested,
+    TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
+  }) {
+    return sendVerificationEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(LoginModel loginModel)? loginRequested,
+    TResult Function(SignUpModel signUpModel)? signUpRequested,
+    TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (sendVerificationEmail != null) {
+      return sendVerificationEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(Login value) loginRequested,
+    required TResult Function(SignUp value) signUpRequested,
+    required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
+  }) {
+    return sendVerificationEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(Login value)? loginRequested,
+    TResult? Function(SignUp value)? signUpRequested,
+    TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
+  }) {
+    return sendVerificationEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(Login value)? loginRequested,
+    TResult Function(SignUp value)? signUpRequested,
+    TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (sendVerificationEmail != null) {
+      return sendVerificationEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendVerificationEmail implements AuthEvent {
+  const factory _SendVerificationEmail() = _$SendVerificationEmailImpl;
+}
+
+/// @nodoc
+abstract class _$$VerifyEmailImplCopyWith<$Res> {
+  factory _$$VerifyEmailImplCopyWith(
+          _$VerifyEmailImpl value, $Res Function(_$VerifyEmailImpl) then) =
+      __$$VerifyEmailImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyEmailImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$VerifyEmailImpl>
+    implements _$$VerifyEmailImplCopyWith<$Res> {
+  __$$VerifyEmailImplCopyWithImpl(
+      _$VerifyEmailImpl _value, $Res Function(_$VerifyEmailImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyEmailImpl implements _VerifyEmail {
+  const _$VerifyEmailImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.verifyEmail()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyEmailImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(LoginModel loginModel) loginRequested,
+    required TResult Function(SignUpModel signUpModel) signUpRequested,
+    required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
+  }) {
+    return verifyEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(LoginModel loginModel)? loginRequested,
+    TResult? Function(SignUpModel signUpModel)? signUpRequested,
+    TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
+  }) {
+    return verifyEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(LoginModel loginModel)? loginRequested,
+    TResult Function(SignUpModel signUpModel)? signUpRequested,
+    TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (verifyEmail != null) {
+      return verifyEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(Login value) loginRequested,
+    required TResult Function(SignUp value) signUpRequested,
+    required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
+  }) {
+    return verifyEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(Login value)? loginRequested,
+    TResult? Function(SignUp value)? signUpRequested,
+    TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
+  }) {
+    return verifyEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(Login value)? loginRequested,
+    TResult Function(SignUp value)? signUpRequested,
+    TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (verifyEmail != null) {
+      return verifyEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyEmail implements AuthEvent {
+  const factory _VerifyEmail() = _$VerifyEmailImpl;
+}
+
+/// @nodoc
+abstract class _$$IsUserNameAvailableImplCopyWith<$Res> {
+  factory _$$IsUserNameAvailableImplCopyWith(_$IsUserNameAvailableImpl value,
+          $Res Function(_$IsUserNameAvailableImpl) then) =
+      __$$IsUserNameAvailableImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String username});
+}
+
+/// @nodoc
+class __$$IsUserNameAvailableImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$IsUserNameAvailableImpl>
+    implements _$$IsUserNameAvailableImplCopyWith<$Res> {
+  __$$IsUserNameAvailableImplCopyWithImpl(_$IsUserNameAvailableImpl _value,
+      $Res Function(_$IsUserNameAvailableImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+  }) {
+    return _then(_$IsUserNameAvailableImpl(
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IsUserNameAvailableImpl implements _IsUserNameAvailable {
+  const _$IsUserNameAvailableImpl({required this.username});
+
+  @override
+  final String username;
+
+  @override
+  String toString() {
+    return 'AuthEvent.isUserNameAvailable(username: $username)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IsUserNameAvailableImpl &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, username);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IsUserNameAvailableImplCopyWith<_$IsUserNameAvailableImpl> get copyWith =>
+      __$$IsUserNameAvailableImplCopyWithImpl<_$IsUserNameAvailableImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(LoginModel loginModel) loginRequested,
+    required TResult Function(SignUpModel signUpModel) signUpRequested,
+    required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
+  }) {
+    return isUserNameAvailable(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(LoginModel loginModel)? loginRequested,
+    TResult? Function(SignUpModel signUpModel)? signUpRequested,
+    TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
+  }) {
+    return isUserNameAvailable?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(LoginModel loginModel)? loginRequested,
+    TResult Function(SignUpModel signUpModel)? signUpRequested,
+    TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (isUserNameAvailable != null) {
+      return isUserNameAvailable(username);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(Login value) loginRequested,
+    required TResult Function(SignUp value) signUpRequested,
+    required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
+  }) {
+    return isUserNameAvailable(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(Login value)? loginRequested,
+    TResult? Function(SignUp value)? signUpRequested,
+    TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
+  }) {
+    return isUserNameAvailable?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(Login value)? loginRequested,
+    TResult Function(SignUp value)? signUpRequested,
+    TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (isUserNameAvailable != null) {
+      return isUserNameAvailable(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsUserNameAvailable implements AuthEvent {
+  const factory _IsUserNameAvailable({required final String username}) =
+      _$IsUserNameAvailableImpl;
+
+  String get username;
+  @JsonKey(ignore: true)
+  _$$IsUserNameAvailableImplCopyWith<_$IsUserNameAvailableImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FinishSetupClickedImplCopyWith<$Res> {
+  factory _$$FinishSetupClickedImplCopyWith(_$FinishSetupClickedImpl value,
+          $Res Function(_$FinishSetupClickedImpl) then) =
+      __$$FinishSetupClickedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserProfileModel userProfileModel});
+}
+
+/// @nodoc
+class __$$FinishSetupClickedImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$FinishSetupClickedImpl>
+    implements _$$FinishSetupClickedImplCopyWith<$Res> {
+  __$$FinishSetupClickedImplCopyWithImpl(_$FinishSetupClickedImpl _value,
+      $Res Function(_$FinishSetupClickedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userProfileModel = null,
+  }) {
+    return _then(_$FinishSetupClickedImpl(
+      userProfileModel: null == userProfileModel
+          ? _value.userProfileModel
+          : userProfileModel // ignore: cast_nullable_to_non_nullable
+              as UserProfileModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FinishSetupClickedImpl implements _FinishSetupClicked {
+  const _$FinishSetupClickedImpl({required this.userProfileModel});
+
+  @override
+  final UserProfileModel userProfileModel;
+
+  @override
+  String toString() {
+    return 'AuthEvent.finishSetupClicked(userProfileModel: $userProfileModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FinishSetupClickedImpl &&
+            (identical(other.userProfileModel, userProfileModel) ||
+                other.userProfileModel == userProfileModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userProfileModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FinishSetupClickedImplCopyWith<_$FinishSetupClickedImpl> get copyWith =>
+      __$$FinishSetupClickedImplCopyWithImpl<_$FinishSetupClickedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(LoginModel loginModel) loginRequested,
+    required TResult Function(SignUpModel signUpModel) signUpRequested,
+    required TResult Function() googleAuthRequested,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() verifyEmail,
+    required TResult Function(String username) isUserNameAvailable,
+    required TResult Function(UserProfileModel userProfileModel)
+        finishSetupClicked,
+  }) {
+    return finishSetupClicked(userProfileModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(LoginModel loginModel)? loginRequested,
+    TResult? Function(SignUpModel signUpModel)? signUpRequested,
+    TResult? Function()? googleAuthRequested,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? verifyEmail,
+    TResult? Function(String username)? isUserNameAvailable,
+    TResult? Function(UserProfileModel userProfileModel)? finishSetupClicked,
+  }) {
+    return finishSetupClicked?.call(userProfileModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(LoginModel loginModel)? loginRequested,
+    TResult Function(SignUpModel signUpModel)? signUpRequested,
+    TResult Function()? googleAuthRequested,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? verifyEmail,
+    TResult Function(String username)? isUserNameAvailable,
+    TResult Function(UserProfileModel userProfileModel)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (finishSetupClicked != null) {
+      return finishSetupClicked(userProfileModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(Login value) loginRequested,
+    required TResult Function(SignUp value) signUpRequested,
+    required TResult Function(_GoogleAuthRequested value) googleAuthRequested,
+    required TResult Function(_SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(_VerifyEmail value) verifyEmail,
+    required TResult Function(_IsUserNameAvailable value) isUserNameAvailable,
+    required TResult Function(_FinishSetupClicked value) finishSetupClicked,
+  }) {
+    return finishSetupClicked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(Login value)? loginRequested,
+    TResult? Function(SignUp value)? signUpRequested,
+    TResult? Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult? Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(_VerifyEmail value)? verifyEmail,
+    TResult? Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult? Function(_FinishSetupClicked value)? finishSetupClicked,
+  }) {
+    return finishSetupClicked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(Login value)? loginRequested,
+    TResult Function(SignUp value)? signUpRequested,
+    TResult Function(_GoogleAuthRequested value)? googleAuthRequested,
+    TResult Function(_SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(_VerifyEmail value)? verifyEmail,
+    TResult Function(_IsUserNameAvailable value)? isUserNameAvailable,
+    TResult Function(_FinishSetupClicked value)? finishSetupClicked,
+    required TResult orElse(),
+  }) {
+    if (finishSetupClicked != null) {
+      return finishSetupClicked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FinishSetupClicked implements AuthEvent {
+  const factory _FinishSetupClicked(
+          {required final UserProfileModel userProfileModel}) =
+      _$FinishSetupClickedImpl;
+
+  UserProfileModel get userProfileModel;
+  @JsonKey(ignore: true)
+  _$$FinishSetupClickedImplCopyWith<_$FinishSetupClickedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -616,8 +1377,13 @@ mixin _$AuthState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -628,8 +1394,13 @@ mixin _$AuthState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -640,8 +1411,13 @@ mixin _$AuthState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -655,6 +1431,13 @@ mixin _$AuthState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -667,6 +1450,12 @@ mixin _$AuthState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -679,6 +1468,11 @@ mixin _$AuthState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -745,8 +1539,13 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return initial();
   }
@@ -760,8 +1559,13 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return initial?.call();
   }
@@ -775,8 +1579,13 @@ class _$InitialImpl implements _Initial {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -796,6 +1605,13 @@ class _$InitialImpl implements _Initial {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return initial(this);
   }
@@ -811,6 +1627,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return initial?.call(this);
   }
@@ -826,6 +1648,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -883,8 +1710,13 @@ class _$LoginLoadingImpl implements LoginLoading {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return loading();
   }
@@ -898,8 +1730,13 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return loading?.call();
   }
@@ -913,8 +1750,13 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -934,6 +1776,13 @@ class _$LoginLoadingImpl implements LoginLoading {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return loading(this);
   }
@@ -949,6 +1798,12 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return loading?.call(this);
   }
@@ -964,6 +1819,11 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1021,8 +1881,13 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return loginSuccess();
   }
@@ -1036,8 +1901,13 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return loginSuccess?.call();
   }
@@ -1051,8 +1921,13 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1072,6 +1947,13 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return loginSuccess(this);
   }
@@ -1087,6 +1969,12 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return loginSuccess?.call(this);
   }
@@ -1102,6 +1990,11 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1186,8 +2079,13 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return loginError(text);
   }
@@ -1201,8 +2099,13 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return loginError?.call(text);
   }
@@ -1216,8 +2119,13 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (loginError != null) {
@@ -1237,6 +2145,13 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return loginError(this);
   }
@@ -1252,6 +2167,12 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return loginError?.call(this);
   }
@@ -1267,6 +2188,11 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (loginError != null) {
@@ -1330,8 +2256,13 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return signUpSuccess();
   }
@@ -1345,8 +2276,13 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return signUpSuccess?.call();
   }
@@ -1360,8 +2296,13 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (signUpSuccess != null) {
@@ -1381,6 +2322,13 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return signUpSuccess(this);
   }
@@ -1396,6 +2344,12 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return signUpSuccess?.call(this);
   }
@@ -1411,6 +2365,11 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (signUpSuccess != null) {
@@ -1495,8 +2454,13 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return signUpError(text);
   }
@@ -1510,8 +2474,13 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return signUpError?.call(text);
   }
@@ -1525,8 +2494,13 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (signUpError != null) {
@@ -1546,6 +2520,13 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return signUpError(this);
   }
@@ -1561,6 +2542,12 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return signUpError?.call(this);
   }
@@ -1576,6 +2563,11 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (signUpError != null) {
@@ -1601,6 +2593,8 @@ abstract class _$$GoogleAuthSuccessStateImplCopyWith<$Res> {
           _$GoogleAuthSuccessStateImpl value,
           $Res Function(_$GoogleAuthSuccessStateImpl) then) =
       __$$GoogleAuthSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool newAccount});
 }
 
 /// @nodoc
@@ -1611,27 +2605,52 @@ class __$$GoogleAuthSuccessStateImplCopyWithImpl<$Res>
       _$GoogleAuthSuccessStateImpl _value,
       $Res Function(_$GoogleAuthSuccessStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? newAccount = null,
+  }) {
+    return _then(_$GoogleAuthSuccessStateImpl(
+      newAccount: null == newAccount
+          ? _value.newAccount
+          : newAccount // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
-  const _$GoogleAuthSuccessStateImpl();
+  const _$GoogleAuthSuccessStateImpl({required this.newAccount});
+
+  @override
+  final bool newAccount;
 
   @override
   String toString() {
-    return 'AuthState.googleAuthSuccess()';
+    return 'AuthState.googleAuthSuccess(newAccount: $newAccount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoogleAuthSuccessStateImpl);
+            other is _$GoogleAuthSuccessStateImpl &&
+            (identical(other.newAccount, newAccount) ||
+                other.newAccount == newAccount));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, newAccount);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleAuthSuccessStateImplCopyWith<_$GoogleAuthSuccessStateImpl>
+      get copyWith => __$$GoogleAuthSuccessStateImplCopyWithImpl<
+          _$GoogleAuthSuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1642,10 +2661,15 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
-    return googleAuthSuccess();
+    return googleAuthSuccess(newAccount);
   }
 
   @override
@@ -1657,10 +2681,15 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
-    return googleAuthSuccess?.call();
+    return googleAuthSuccess?.call(newAccount);
   }
 
   @override
@@ -1672,12 +2701,17 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (googleAuthSuccess != null) {
-      return googleAuthSuccess();
+      return googleAuthSuccess(newAccount);
     }
     return orElse();
   }
@@ -1693,6 +2727,13 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return googleAuthSuccess(this);
   }
@@ -1708,6 +2749,12 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return googleAuthSuccess?.call(this);
   }
@@ -1723,6 +2770,11 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (googleAuthSuccess != null) {
@@ -1733,7 +2785,13 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
 }
 
 abstract class GoogleAuthSuccessState implements AuthState {
-  const factory GoogleAuthSuccessState() = _$GoogleAuthSuccessStateImpl;
+  const factory GoogleAuthSuccessState({required final bool newAccount}) =
+      _$GoogleAuthSuccessStateImpl;
+
+  bool get newAccount;
+  @JsonKey(ignore: true)
+  _$$GoogleAuthSuccessStateImplCopyWith<_$GoogleAuthSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1809,8 +2867,13 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     required TResult Function(String text) loginError,
     required TResult Function() signUpSuccess,
     required TResult Function(String text) signUpError,
-    required TResult Function() googleAuthSuccess,
+    required TResult Function(bool newAccount) googleAuthSuccess,
     required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
   }) {
     return googleAuthError(text);
   }
@@ -1824,8 +2887,13 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult? Function(String text)? loginError,
     TResult? Function()? signUpSuccess,
     TResult? Function(String text)? signUpError,
-    TResult? Function()? googleAuthSuccess,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
     TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
   }) {
     return googleAuthError?.call(text);
   }
@@ -1839,8 +2907,13 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult Function(String text)? loginError,
     TResult Function()? signUpSuccess,
     TResult Function(String text)? signUpError,
-    TResult Function()? googleAuthSuccess,
+    TResult Function(bool newAccount)? googleAuthSuccess,
     TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
     required TResult orElse(),
   }) {
     if (googleAuthError != null) {
@@ -1860,6 +2933,13 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     required TResult Function(SignUpErrorState value) signUpError,
     required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
     required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
   }) {
     return googleAuthError(this);
   }
@@ -1875,6 +2955,12 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult? Function(SignUpErrorState value)? signUpError,
     TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
     return googleAuthError?.call(this);
   }
@@ -1890,6 +2976,11 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult Function(SignUpErrorState value)? signUpError,
     TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
     TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
   }) {
     if (googleAuthError != null) {
@@ -1907,4 +2998,932 @@ abstract class GoogleAuthErrorErrorState implements AuthState {
   @JsonKey(ignore: true)
   _$$GoogleAuthErrorErrorStateImplCopyWith<_$GoogleAuthErrorErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailVerifiedImplCopyWith<$Res> {
+  factory _$$EmailVerifiedImplCopyWith(
+          _$EmailVerifiedImpl value, $Res Function(_$EmailVerifiedImpl) then) =
+      __$$EmailVerifiedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmailVerifiedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$EmailVerifiedImpl>
+    implements _$$EmailVerifiedImplCopyWith<$Res> {
+  __$$EmailVerifiedImplCopyWithImpl(
+      _$EmailVerifiedImpl _value, $Res Function(_$EmailVerifiedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmailVerifiedImpl implements EmailVerified {
+  const _$EmailVerifiedImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.emailVerified()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmailVerifiedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return emailVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return emailVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (emailVerified != null) {
+      return emailVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return emailVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return emailVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (emailVerified != null) {
+      return emailVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailVerified implements AuthState {
+  const factory EmailVerified() = _$EmailVerifiedImpl;
+}
+
+/// @nodoc
+abstract class _$$UsernameIsAvaliableStateImplCopyWith<$Res> {
+  factory _$$UsernameIsAvaliableStateImplCopyWith(
+          _$UsernameIsAvaliableStateImpl value,
+          $Res Function(_$UsernameIsAvaliableStateImpl) then) =
+      __$$UsernameIsAvaliableStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String username});
+}
+
+/// @nodoc
+class __$$UsernameIsAvaliableStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UsernameIsAvaliableStateImpl>
+    implements _$$UsernameIsAvaliableStateImplCopyWith<$Res> {
+  __$$UsernameIsAvaliableStateImplCopyWithImpl(
+      _$UsernameIsAvaliableStateImpl _value,
+      $Res Function(_$UsernameIsAvaliableStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+  }) {
+    return _then(_$UsernameIsAvaliableStateImpl(
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
+  const _$UsernameIsAvaliableStateImpl({required this.username});
+
+  @override
+  final String username;
+
+  @override
+  String toString() {
+    return 'AuthState.usernameIsAvailable(username: $username)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernameIsAvaliableStateImpl &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, username);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsernameIsAvaliableStateImplCopyWith<_$UsernameIsAvaliableStateImpl>
+      get copyWith => __$$UsernameIsAvaliableStateImplCopyWithImpl<
+          _$UsernameIsAvaliableStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return usernameIsAvailable(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return usernameIsAvailable?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsAvailable != null) {
+      return usernameIsAvailable(username);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return usernameIsAvailable(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return usernameIsAvailable?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsAvailable != null) {
+      return usernameIsAvailable(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameIsAvaliableState implements AuthState {
+  const factory UsernameIsAvaliableState({required final String username}) =
+      _$UsernameIsAvaliableStateImpl;
+
+  String get username;
+  @JsonKey(ignore: true)
+  _$$UsernameIsAvaliableStateImplCopyWith<_$UsernameIsAvaliableStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsernameIsNotAvaliableStateImplCopyWith<$Res> {
+  factory _$$UsernameIsNotAvaliableStateImplCopyWith(
+          _$UsernameIsNotAvaliableStateImpl value,
+          $Res Function(_$UsernameIsNotAvaliableStateImpl) then) =
+      __$$UsernameIsNotAvaliableStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String username});
+}
+
+/// @nodoc
+class __$$UsernameIsNotAvaliableStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UsernameIsNotAvaliableStateImpl>
+    implements _$$UsernameIsNotAvaliableStateImplCopyWith<$Res> {
+  __$$UsernameIsNotAvaliableStateImplCopyWithImpl(
+      _$UsernameIsNotAvaliableStateImpl _value,
+      $Res Function(_$UsernameIsNotAvaliableStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+  }) {
+    return _then(_$UsernameIsNotAvaliableStateImpl(
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
+  const _$UsernameIsNotAvaliableStateImpl({required this.username});
+
+  @override
+  final String username;
+
+  @override
+  String toString() {
+    return 'AuthState.usernameIsNotAvailable(username: $username)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernameIsNotAvaliableStateImpl &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, username);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsernameIsNotAvaliableStateImplCopyWith<_$UsernameIsNotAvaliableStateImpl>
+      get copyWith => __$$UsernameIsNotAvaliableStateImplCopyWithImpl<
+          _$UsernameIsNotAvaliableStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return usernameIsNotAvailable(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return usernameIsNotAvailable?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsNotAvailable != null) {
+      return usernameIsNotAvailable(username);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return usernameIsNotAvailable(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return usernameIsNotAvailable?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsNotAvailable != null) {
+      return usernameIsNotAvailable(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameIsNotAvaliableState implements AuthState {
+  const factory UsernameIsNotAvaliableState({required final String username}) =
+      _$UsernameIsNotAvaliableStateImpl;
+
+  String get username;
+  @JsonKey(ignore: true)
+  _$$UsernameIsNotAvaliableStateImplCopyWith<_$UsernameIsNotAvaliableStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsernamefieldIsEmptyImplCopyWith<$Res> {
+  factory _$$UsernamefieldIsEmptyImplCopyWith(_$UsernamefieldIsEmptyImpl value,
+          $Res Function(_$UsernamefieldIsEmptyImpl) then) =
+      __$$UsernamefieldIsEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UsernamefieldIsEmptyImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UsernamefieldIsEmptyImpl>
+    implements _$$UsernamefieldIsEmptyImplCopyWith<$Res> {
+  __$$UsernamefieldIsEmptyImplCopyWithImpl(_$UsernamefieldIsEmptyImpl _value,
+      $Res Function(_$UsernamefieldIsEmptyImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
+  const _$UsernamefieldIsEmptyImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.usernamefieldIsEmpty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernamefieldIsEmptyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return usernamefieldIsEmpty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return usernamefieldIsEmpty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernamefieldIsEmpty != null) {
+      return usernamefieldIsEmpty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return usernamefieldIsEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return usernamefieldIsEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernamefieldIsEmpty != null) {
+      return usernamefieldIsEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernamefieldIsEmpty implements AuthState {
+  const factory UsernamefieldIsEmpty() = _$UsernamefieldIsEmptyImpl;
+}
+
+/// @nodoc
+abstract class _$$FinishSetupStateImplCopyWith<$Res> {
+  factory _$$FinishSetupStateImplCopyWith(_$FinishSetupStateImpl value,
+          $Res Function(_$FinishSetupStateImpl) then) =
+      __$$FinishSetupStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FinishSetupStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$FinishSetupStateImpl>
+    implements _$$FinishSetupStateImplCopyWith<$Res> {
+  __$$FinishSetupStateImplCopyWithImpl(_$FinishSetupStateImpl _value,
+      $Res Function(_$FinishSetupStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FinishSetupStateImpl implements FinishSetupState {
+  const _$FinishSetupStateImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.finishSetupState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FinishSetupStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return finishSetupState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return finishSetupState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (finishSetupState != null) {
+      return finishSetupState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return finishSetupState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return finishSetupState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (finishSetupState != null) {
+      return finishSetupState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FinishSetupState implements AuthState {
+  const factory FinishSetupState() = _$FinishSetupStateImpl;
 }

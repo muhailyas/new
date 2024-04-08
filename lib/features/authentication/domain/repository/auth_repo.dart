@@ -10,4 +10,7 @@ abstract class AuthenticationRepository {
   Future<DataState<SignUpEntity>> signUpWithEmailAndPassword(
       {required SignUpModel signUpModel});
   Future<DataState> continueWithGoogle();
+  Future<void> sendVerificationEmail();
+  Future<DataState<bool>> verifyEmail();
+  Future<DataState<bool>> checkNewUser();
 }

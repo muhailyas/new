@@ -6,6 +6,7 @@ import 'package:zed/core/constants/app_constants.dart';
 import 'package:zed/core/responsive/responsive.dart';
 import 'package:zed/core/utils/snackbar.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
+import 'package:zed/features/authentication/presentation/pages/create_account/complete_account_create.dart';
 import 'package:zed/features/authentication/presentation/pages/create_account/detail_collecting_screen.dart';
 import 'package:zed/features/authentication/presentation/pages/login_screen.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
@@ -40,6 +41,15 @@ class OnBoardScreen extends StatelessWidget {
             BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state is GoogleAuthSuccessState) {
+                  if (!state.newAccount) {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompleteAccountCreate(),
+                        ),
+                        (route) => false);
+                    return;
+                  }
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(

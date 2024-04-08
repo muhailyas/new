@@ -11,8 +11,9 @@ import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dar
 import 'package:zed/features/authentication/presentation/pages/create_account/detail_collecting_screen.dart';
 import 'package:zed/features/authentication/presentation/widgets/auth_text_field_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
+import 'package:zed/features/authentication/presentation/widgets/circular_bar_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/custom_button_widget.dart';
-import 'package:zed/features/home/presentation/pages/home_screen.dart';
+import 'package:zed/features/home/presentation/pages/root_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -113,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomeScreen(),
+                            builder: (context) => const RootScreen(),
                           ),
                           (route) => false);
                     } else if (state is LoginErrorState) {
@@ -140,12 +141,7 @@ class LoginScreen extends StatelessWidget {
                                       loginModel: loginModel));
                             },
                       child: state is LoginLoading
-                          ? const Padding(
-                              padding: EdgeInsets.all(18.0),
-                              child: CircularProgressIndicator(
-                                color: AppColors.lightColor,
-                              ),
-                            )
+                          ? const CustomCircularIndicator()
                           : Text(
                               "Login",
                               style: TextStyle(
