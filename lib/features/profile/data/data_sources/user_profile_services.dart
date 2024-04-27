@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:zed/features/profile/data/models/user_profile_model.dart';
@@ -12,6 +14,7 @@ class UserProfileServices {
   // Function to check if the username is unique
   Future<bool> isUsernameUnique(String username) async {
     final DocumentSnapshot usernameDoc = await usernamesRef.doc(username).get();
+    log((!usernameDoc.exists).toString());
     return !usernameDoc.exists; // Returns true if the username is unique
   }
 

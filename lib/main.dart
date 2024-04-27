@@ -48,7 +48,6 @@ class Zed extends StatelessWidget {
         theme: UiThemeConfig.lightTheme,
         darkTheme: UiThemeConfig.darkTheme,
         home: const SplashScreen(),
-        // home: CompleteAccountCreate(),
       ),
     );
   }

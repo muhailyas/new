@@ -130,6 +130,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(const AuthState.usernamefieldIsEmpty());
       return;
     }
+    final username =
+        await _usernameValidateUseCase(params: event.userProfileModel.userName);
+    print(username);
+    if (username is DataFailed) {
+      emit(AuthState.usernameIsNotAvailable(
+          username: event.userProfileModel.userName));
+      return;
+    }
     final response =
         await _createUserProfileUseCase(params: event.userProfileModel);
     if (response is DataSuccess) {

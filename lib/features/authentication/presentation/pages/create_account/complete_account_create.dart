@@ -7,6 +7,7 @@ import 'package:zed/core/utils/snackbar.dart';
 import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dart';
 import 'package:zed/features/authentication/presentation/widgets/auth_text_field_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/background_animation.dart';
+import 'package:zed/features/authentication/presentation/widgets/circular_bar_widget.dart';
 import 'package:zed/features/authentication/presentation/widgets/custom_button_widget.dart';
 import 'package:zed/features/home/presentation/pages/root_screen.dart';
 import 'package:zed/features/profile/data/models/user_profile_model.dart';
@@ -66,7 +67,7 @@ class CompleteAccountCreate extends StatelessWidget {
                 if (state is UsernameIsAvaliableState) {
                   return ShowUserNameAvailabilityWidget(
                       username: state.username, available: true);
-                } else if (state is UsernameIsAvaliableState) {
+                } else if (state is UsernameIsNotAvaliableState) {
                   return ShowUserNameAvailabilityWidget(
                       username: state.username);
                 } else {
@@ -101,15 +102,18 @@ class CompleteAccountCreate extends StatelessWidget {
                         savedPosts: [],
                         token: '',
                       );
+
                       context.read<AuthBloc>().add(AuthEvent.finishSetupClicked(
                             userProfileModel: userProfile,
                           ));
                     },
-                    child: const Text("Finish setup",
-                        style: TextStyle(
-                          color: AppColors.lightColor,
-                          fontWeight: FontWeight.bold,
-                        )));
+                    child: state is LoginLoading
+                        ? const CustomCircularIndicator()
+                        : const Text("Finish setup",
+                            style: TextStyle(
+                              color: AppColors.lightColor,
+                              fontWeight: FontWeight.bold,
+                            )));
               },
             )
           ],

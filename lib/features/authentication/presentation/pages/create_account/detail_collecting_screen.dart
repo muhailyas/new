@@ -154,7 +154,8 @@ class DetailCollectingScreen extends StatelessWidget {
     if (!AuthBloc.termsAndConditionAccept) {
       showSnackBar(
           context: context,
-          text: 'You must agree to the terms and conditions to continue.');
+          text:
+              'Before proceeding, please review and accept our Terms and Conditions by ticking the checkbox.');
       return;
     }
 
