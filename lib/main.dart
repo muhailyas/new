@@ -7,6 +7,7 @@ import 'package:zed/features/authentication/presentation/bloc/auth/auth_bloc.dar
 import 'package:zed/features/home/presentation/bloc/bottom_nav/bottomnavigation_bloc.dart';
 import 'package:zed/features/home/presentation/bloc/home/home_bloc.dart';
 import 'package:zed/features/injection_container.dart';
+import 'package:zed/features/search/presentation/bloc/search/search_bloc.dart';
 import 'package:zed/features/splash/presentation/bloc/splash/splash_bloc.dart';
 import 'package:zed/features/splash/presentation/pages/splash.dart';
 import 'package:zed/firebase_options.dart';
@@ -38,6 +39,9 @@ class Zed extends StatelessWidget {
           create: (context) => DI.sl(),
         ),
         BlocProvider<HomeBloc>(
+          create: (context) => DI.sl(),
+        ),
+        BlocProvider<SearchBloc>(
           create: (context) => DI.sl(),
         )
       ],

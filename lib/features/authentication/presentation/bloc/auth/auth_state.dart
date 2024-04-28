@@ -32,6 +32,8 @@ class AuthState with _$AuthState {
       UsernameIsAvaliableState;
   const factory AuthState.usernameIsNotAvailable({required String username}) =
       UsernameIsNotAvaliableState;
+  const factory AuthState.usernameIsNotValid({required String error}) =
+      UsernameIsNotValidState;
   const factory AuthState.usernamefieldIsEmpty() = UsernamefieldIsEmpty;
 
   // finish setup states

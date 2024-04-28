@@ -14,7 +14,7 @@ bool isPasswordValid(String password) {
 }
 
 bool isUsernameValid(String username) {
-  final usernameRegex = RegExp(r'^[a-zA-Z0-9_]{3,20}$');
+  final usernameRegex = RegExp(r'^[a-z0-9_]{3,20}$');
   return usernameRegex.hasMatch(username);
 }
 
@@ -46,7 +46,7 @@ validationResult(BuildContext context, TextEditingController controller) {
   } else if (provider.passwordController == controller) {
     return 'password should contain atleast 8 characters';
   } else if (provider.usernameController == controller) {
-    return 'Username can only contain letters, numbers, and underscores';
+    return 'Username can only contain lower characters, numbers, and underscores';
   }
 }
 
