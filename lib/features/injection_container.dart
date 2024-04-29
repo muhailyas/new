@@ -25,6 +25,7 @@ import 'package:zed/features/profile/domain/repositoy/user_profile_repository.da
 import 'package:zed/features/search/data/data_sources/remote/search_data_source.dart';
 import 'package:zed/features/search/data/repository/search_repository_impl.dart';
 import 'package:zed/features/search/domain/repository/search_repository.dart';
+import 'package:zed/features/search/domain/use_cases/fetch_posts_use_case.dart';
 import 'package:zed/features/search/domain/use_cases/search_use_case.dart';
 import 'package:zed/features/search/presentation/bloc/search/search_bloc.dart';
 import 'package:zed/features/splash/data/data_sources/data_sources.dart';
@@ -69,6 +70,7 @@ class DI {
     sl.registerSingleton<CheckNewUserUseCase>(CheckNewUserUseCase(sl()));
     sl.registerSingleton<GetPostsUseCase>(GetPostsUseCase(sl()));
     sl.registerSingleton<SearchUserUseCase>(SearchUserUseCase(sl()));
+    sl.registerSingleton<FetchPostsUseCase>(FetchPostsUseCase(sl()));
 
     /// Bloc
     sl.registerFactory<SplashBloc>(() => SplashBloc(sl()));
@@ -76,6 +78,6 @@ class DI {
         () => AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     sl.registerFactory<BottomnavigationBloc>(() => BottomnavigationBloc());
     sl.registerFactory<HomeBloc>(() => HomeBloc(sl()));
-    sl.registerFactory<SearchBloc>(() => SearchBloc(sl()));
+    sl.registerFactory<SearchBloc>(() => SearchBloc(sl(), sl()));
   }
 }

@@ -317,7 +317,7 @@ abstract class SearchUserByUsername implements SearchEvent {
 mixin _$SearchState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(List<PostEntity> posts) initial,
     required TResult Function(List<UserProfileEntity> users)
         searchResultSuccess,
     required TResult Function() searchResultNotFoundUser,
@@ -326,7 +326,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(List<PostEntity> posts)? initial,
     TResult? Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult? Function()? searchResultNotFoundUser,
     TResult? Function()? searchResultError,
@@ -334,7 +334,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<PostEntity> posts)? initial,
     TResult Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult Function()? searchResultNotFoundUser,
     TResult Function()? searchResultError,
@@ -343,7 +343,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(SearchResultSuccess value) searchResultSuccess,
     required TResult Function(SearchResultNotFoundUser value)
         searchResultNotFoundUser,
@@ -352,7 +352,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(SearchResultSuccess value)? searchResultSuccess,
     TResult? Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult? Function(SearchResultError value)? searchResultError,
@@ -360,7 +360,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(SearchResultSuccess value)? searchResultSuccess,
     TResult Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult Function(SearchResultError value)? searchResultError,
@@ -392,6 +392,8 @@ abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
           _$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<PostEntity> posts});
 }
 
 /// @nodoc
@@ -401,61 +403,91 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? posts = null,
+  }) {
+    return _then(_$InitialImpl(
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostEntity>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$InitialImpl implements Initial {
+  const _$InitialImpl({required final List<PostEntity> posts}) : _posts = posts;
+
+  final List<PostEntity> _posts;
+  @override
+  List<PostEntity> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
 
   @override
   String toString() {
-    return 'SearchState.initial()';
+    return 'SearchState.initial(posts: $posts)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$InitialImpl &&
+            const DeepCollectionEquality().equals(other._posts, _posts));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(List<PostEntity> posts) initial,
     required TResult Function(List<UserProfileEntity> users)
         searchResultSuccess,
     required TResult Function() searchResultNotFoundUser,
     required TResult Function() searchResultError,
   }) {
-    return initial();
+    return initial(posts);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(List<PostEntity> posts)? initial,
     TResult? Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult? Function()? searchResultNotFoundUser,
     TResult? Function()? searchResultError,
   }) {
-    return initial?.call();
+    return initial?.call(posts);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<PostEntity> posts)? initial,
     TResult Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult Function()? searchResultNotFoundUser,
     TResult Function()? searchResultError,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(posts);
     }
     return orElse();
   }
@@ -463,7 +495,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(SearchResultSuccess value) searchResultSuccess,
     required TResult Function(SearchResultNotFoundUser value)
         searchResultNotFoundUser,
@@ -475,7 +507,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(SearchResultSuccess value)? searchResultSuccess,
     TResult? Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult? Function(SearchResultError value)? searchResultError,
@@ -486,7 +518,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(SearchResultSuccess value)? searchResultSuccess,
     TResult Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult Function(SearchResultError value)? searchResultError,
@@ -499,8 +531,14 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SearchState {
-  const factory _Initial() = _$InitialImpl;
+abstract class Initial implements SearchState {
+  const factory Initial({required final List<PostEntity> posts}) =
+      _$InitialImpl;
+
+  List<PostEntity> get posts;
+  @JsonKey(ignore: true)
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -576,7 +614,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(List<PostEntity> posts) initial,
     required TResult Function(List<UserProfileEntity> users)
         searchResultSuccess,
     required TResult Function() searchResultNotFoundUser,
@@ -588,7 +626,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(List<PostEntity> posts)? initial,
     TResult? Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult? Function()? searchResultNotFoundUser,
     TResult? Function()? searchResultError,
@@ -599,7 +637,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<PostEntity> posts)? initial,
     TResult Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult Function()? searchResultNotFoundUser,
     TResult Function()? searchResultError,
@@ -614,7 +652,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(SearchResultSuccess value) searchResultSuccess,
     required TResult Function(SearchResultNotFoundUser value)
         searchResultNotFoundUser,
@@ -626,7 +664,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(SearchResultSuccess value)? searchResultSuccess,
     TResult? Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult? Function(SearchResultError value)? searchResultError,
@@ -637,7 +675,7 @@ class _$SearchResultSuccessImpl implements SearchResultSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(SearchResultSuccess value)? searchResultSuccess,
     TResult Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult Function(SearchResultError value)? searchResultError,
@@ -702,7 +740,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(List<PostEntity> posts) initial,
     required TResult Function(List<UserProfileEntity> users)
         searchResultSuccess,
     required TResult Function() searchResultNotFoundUser,
@@ -714,7 +752,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(List<PostEntity> posts)? initial,
     TResult? Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult? Function()? searchResultNotFoundUser,
     TResult? Function()? searchResultError,
@@ -725,7 +763,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<PostEntity> posts)? initial,
     TResult Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult Function()? searchResultNotFoundUser,
     TResult Function()? searchResultError,
@@ -740,7 +778,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(SearchResultSuccess value) searchResultSuccess,
     required TResult Function(SearchResultNotFoundUser value)
         searchResultNotFoundUser,
@@ -752,7 +790,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(SearchResultSuccess value)? searchResultSuccess,
     TResult? Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult? Function(SearchResultError value)? searchResultError,
@@ -763,7 +801,7 @@ class _$SearchResultNotFoundUserImpl implements SearchResultNotFoundUser {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(SearchResultSuccess value)? searchResultSuccess,
     TResult Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult Function(SearchResultError value)? searchResultError,
@@ -818,7 +856,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(List<PostEntity> posts) initial,
     required TResult Function(List<UserProfileEntity> users)
         searchResultSuccess,
     required TResult Function() searchResultNotFoundUser,
@@ -830,7 +868,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(List<PostEntity> posts)? initial,
     TResult? Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult? Function()? searchResultNotFoundUser,
     TResult? Function()? searchResultError,
@@ -841,7 +879,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(List<PostEntity> posts)? initial,
     TResult Function(List<UserProfileEntity> users)? searchResultSuccess,
     TResult Function()? searchResultNotFoundUser,
     TResult Function()? searchResultError,
@@ -856,7 +894,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(SearchResultSuccess value) searchResultSuccess,
     required TResult Function(SearchResultNotFoundUser value)
         searchResultNotFoundUser,
@@ -868,7 +906,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(SearchResultSuccess value)? searchResultSuccess,
     TResult? Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult? Function(SearchResultError value)? searchResultError,
@@ -879,7 +917,7 @@ class _$SearchResultErrorImpl implements SearchResultError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(SearchResultSuccess value)? searchResultSuccess,
     TResult Function(SearchResultNotFoundUser value)? searchResultNotFoundUser,
     TResult Function(SearchResultError value)? searchResultError,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:zed/core/constants/dummy_datas.dart';
+import 'package:zed/features/post/domain/entity/post_entity.dart';
 
 class SearchPageItemTileWidget extends StatelessWidget {
   const SearchPageItemTileWidget({
     super.key,
-    required this.index,
+    required this.postEntity,
   });
-  final int index;
+  final PostEntity postEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SearchPageItemTileWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.background,
           image: DecorationImage(
-            image: NetworkImage(images[index]),
+            image: NetworkImage(postEntity.postUrl),
             fit: BoxFit.cover,
           )),
     );
