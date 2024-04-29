@@ -1382,6 +1382,7 @@ mixin _$AuthState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) =>
@@ -1399,6 +1400,7 @@ mixin _$AuthState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) =>
@@ -1416,6 +1418,7 @@ mixin _$AuthState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -1436,6 +1439,7 @@ mixin _$AuthState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) =>
@@ -1454,6 +1458,7 @@ mixin _$AuthState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) =>
@@ -1471,6 +1476,7 @@ mixin _$AuthState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -1544,6 +1550,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -1564,6 +1571,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -1584,6 +1592,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -1610,6 +1619,7 @@ class _$InitialImpl implements _Initial {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -1631,6 +1641,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -1651,6 +1662,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -1715,6 +1727,7 @@ class _$LoginLoadingImpl implements LoginLoading {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -1735,6 +1748,7 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -1755,6 +1769,7 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -1781,6 +1796,7 @@ class _$LoginLoadingImpl implements LoginLoading {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -1802,6 +1818,7 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -1822,6 +1839,7 @@ class _$LoginLoadingImpl implements LoginLoading {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -1886,6 +1904,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -1906,6 +1925,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -1926,6 +1946,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -1952,6 +1973,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -1973,6 +1995,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -1993,6 +2016,7 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -2084,6 +2108,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -2104,6 +2129,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -2124,6 +2150,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -2150,6 +2177,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -2171,6 +2199,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -2191,6 +2220,7 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -2261,6 +2291,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -2281,6 +2312,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -2301,6 +2333,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -2327,6 +2360,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -2348,6 +2382,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -2368,6 +2403,7 @@ class _$SignUpSuccessStateImpl implements SignUpSuccessState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -2459,6 +2495,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -2479,6 +2516,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -2499,6 +2537,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -2525,6 +2564,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -2546,6 +2586,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -2566,6 +2607,7 @@ class _$SignUpErrorStateImpl implements SignUpErrorState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -2666,6 +2708,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -2686,6 +2729,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -2706,6 +2750,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -2732,6 +2777,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -2753,6 +2799,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -2773,6 +2820,7 @@ class _$GoogleAuthSuccessStateImpl implements GoogleAuthSuccessState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -2872,6 +2920,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -2892,6 +2941,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -2912,6 +2962,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -2938,6 +2989,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -2959,6 +3011,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -2979,6 +3032,7 @@ class _$GoogleAuthErrorErrorStateImpl implements GoogleAuthErrorErrorState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -3049,6 +3103,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -3069,6 +3124,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -3089,6 +3145,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -3115,6 +3172,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -3136,6 +3194,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -3156,6 +3215,7 @@ class _$EmailVerifiedImpl implements EmailVerified {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -3250,6 +3310,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -3270,6 +3331,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -3290,6 +3352,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -3316,6 +3379,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -3337,6 +3401,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -3357,6 +3422,7 @@ class _$UsernameIsAvaliableStateImpl implements UsernameIsAvaliableState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -3457,6 +3523,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -3477,6 +3544,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -3497,6 +3565,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -3523,6 +3592,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -3544,6 +3614,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -3564,6 +3635,7 @@ class _$UsernameIsNotAvaliableStateImpl implements UsernameIsNotAvaliableState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -3582,6 +3654,218 @@ abstract class UsernameIsNotAvaliableState implements AuthState {
   String get username;
   @JsonKey(ignore: true)
   _$$UsernameIsNotAvaliableStateImplCopyWith<_$UsernameIsNotAvaliableStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsernameIsNotValidStateImplCopyWith<$Res> {
+  factory _$$UsernameIsNotValidStateImplCopyWith(
+          _$UsernameIsNotValidStateImpl value,
+          $Res Function(_$UsernameIsNotValidStateImpl) then) =
+      __$$UsernameIsNotValidStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UsernameIsNotValidStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UsernameIsNotValidStateImpl>
+    implements _$$UsernameIsNotValidStateImplCopyWith<$Res> {
+  __$$UsernameIsNotValidStateImplCopyWithImpl(
+      _$UsernameIsNotValidStateImpl _value,
+      $Res Function(_$UsernameIsNotValidStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UsernameIsNotValidStateImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UsernameIsNotValidStateImpl implements UsernameIsNotValidState {
+  const _$UsernameIsNotValidStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'AuthState.usernameIsNotValid(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernameIsNotValidStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsernameIsNotValidStateImplCopyWith<_$UsernameIsNotValidStateImpl>
+      get copyWith => __$$UsernameIsNotValidStateImplCopyWithImpl<
+          _$UsernameIsNotValidStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String text) loginError,
+    required TResult Function() signUpSuccess,
+    required TResult Function(String text) signUpError,
+    required TResult Function(bool newAccount) googleAuthSuccess,
+    required TResult Function(String text) googleAuthError,
+    required TResult Function() emailVerified,
+    required TResult Function(String username) usernameIsAvailable,
+    required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
+    required TResult Function() usernamefieldIsEmpty,
+    required TResult Function() finishSetupState,
+  }) {
+    return usernameIsNotValid(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String text)? loginError,
+    TResult? Function()? signUpSuccess,
+    TResult? Function(String text)? signUpError,
+    TResult? Function(bool newAccount)? googleAuthSuccess,
+    TResult? Function(String text)? googleAuthError,
+    TResult? Function()? emailVerified,
+    TResult? Function(String username)? usernameIsAvailable,
+    TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
+    TResult? Function()? usernamefieldIsEmpty,
+    TResult? Function()? finishSetupState,
+  }) {
+    return usernameIsNotValid?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(String text)? loginError,
+    TResult Function()? signUpSuccess,
+    TResult Function(String text)? signUpError,
+    TResult Function(bool newAccount)? googleAuthSuccess,
+    TResult Function(String text)? googleAuthError,
+    TResult Function()? emailVerified,
+    TResult Function(String username)? usernameIsAvailable,
+    TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
+    TResult Function()? usernamefieldIsEmpty,
+    TResult Function()? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsNotValid != null) {
+      return usernameIsNotValid(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoginLoading value) loading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(GoogleAuthSuccessState value) googleAuthSuccess,
+    required TResult Function(GoogleAuthErrorErrorState value) googleAuthError,
+    required TResult Function(EmailVerified value) emailVerified,
+    required TResult Function(UsernameIsAvaliableState value)
+        usernameIsAvailable,
+    required TResult Function(UsernameIsNotAvaliableState value)
+        usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
+    required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
+    required TResult Function(FinishSetupState value) finishSetupState,
+  }) {
+    return usernameIsNotValid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoginLoading value)? loading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult? Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult? Function(EmailVerified value)? emailVerified,
+    TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult? Function(UsernameIsNotAvaliableState value)?
+        usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
+    TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult? Function(FinishSetupState value)? finishSetupState,
+  }) {
+    return usernameIsNotValid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoginLoading value)? loading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(GoogleAuthSuccessState value)? googleAuthSuccess,
+    TResult Function(GoogleAuthErrorErrorState value)? googleAuthError,
+    TResult Function(EmailVerified value)? emailVerified,
+    TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
+    TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
+    TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
+    TResult Function(FinishSetupState value)? finishSetupState,
+    required TResult orElse(),
+  }) {
+    if (usernameIsNotValid != null) {
+      return usernameIsNotValid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameIsNotValidState implements AuthState {
+  const factory UsernameIsNotValidState({required final String error}) =
+      _$UsernameIsNotValidStateImpl;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UsernameIsNotValidStateImplCopyWith<_$UsernameIsNotValidStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3635,6 +3919,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -3655,6 +3940,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -3675,6 +3961,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -3701,6 +3988,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -3722,6 +4010,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -3742,6 +4031,7 @@ class _$UsernamefieldIsEmptyImpl implements UsernamefieldIsEmpty {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),
@@ -3806,6 +4096,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
     required TResult Function() emailVerified,
     required TResult Function(String username) usernameIsAvailable,
     required TResult Function(String username) usernameIsNotAvailable,
+    required TResult Function(String error) usernameIsNotValid,
     required TResult Function() usernamefieldIsEmpty,
     required TResult Function() finishSetupState,
   }) {
@@ -3826,6 +4117,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
     TResult? Function()? emailVerified,
     TResult? Function(String username)? usernameIsAvailable,
     TResult? Function(String username)? usernameIsNotAvailable,
+    TResult? Function(String error)? usernameIsNotValid,
     TResult? Function()? usernamefieldIsEmpty,
     TResult? Function()? finishSetupState,
   }) {
@@ -3846,6 +4138,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
     TResult Function()? emailVerified,
     TResult Function(String username)? usernameIsAvailable,
     TResult Function(String username)? usernameIsNotAvailable,
+    TResult Function(String error)? usernameIsNotValid,
     TResult Function()? usernamefieldIsEmpty,
     TResult Function()? finishSetupState,
     required TResult orElse(),
@@ -3872,6 +4165,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
         usernameIsAvailable,
     required TResult Function(UsernameIsNotAvaliableState value)
         usernameIsNotAvailable,
+    required TResult Function(UsernameIsNotValidState value) usernameIsNotValid,
     required TResult Function(UsernamefieldIsEmpty value) usernamefieldIsEmpty,
     required TResult Function(FinishSetupState value) finishSetupState,
   }) {
@@ -3893,6 +4187,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
     TResult? Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult? Function(UsernameIsNotAvaliableState value)?
         usernameIsNotAvailable,
+    TResult? Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult? Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult? Function(FinishSetupState value)? finishSetupState,
   }) {
@@ -3913,6 +4208,7 @@ class _$FinishSetupStateImpl implements FinishSetupState {
     TResult Function(EmailVerified value)? emailVerified,
     TResult Function(UsernameIsAvaliableState value)? usernameIsAvailable,
     TResult Function(UsernameIsNotAvaliableState value)? usernameIsNotAvailable,
+    TResult Function(UsernameIsNotValidState value)? usernameIsNotValid,
     TResult Function(UsernamefieldIsEmpty value)? usernamefieldIsEmpty,
     TResult Function(FinishSetupState value)? finishSetupState,
     required TResult orElse(),

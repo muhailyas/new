@@ -36,7 +36,7 @@ class UserProfileModel extends UserProfileEntity {
     return {
       'uid': uid,
       'fullname': fullname,
-      'userName': userName,
+      'userName': userName.toLowerCase(),
       'email': email,
       'bio': bio,
       'profilephoto': profilePhoto,

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:zed/features/authentication/data/data_sources/auth_data_sources.dart';
@@ -21,6 +22,12 @@ import 'package:zed/features/post/domain/usecases/get_posts_usecase.dart';
 import 'package:zed/features/profile/data/data_sources/user_profile_services.dart';
 import 'package:zed/features/profile/data/repositoy/user_profile_repository_impl.dart';
 import 'package:zed/features/profile/domain/repositoy/user_profile_repository.dart';
+import 'package:zed/features/search/data/data_sources/remote/search_data_source.dart';
+import 'package:zed/features/search/data/repository/search_repository_impl.dart';
+import 'package:zed/features/search/domain/repository/search_repository.dart';
+import 'package:zed/features/search/domain/use_cases/fetch_posts_use_case.dart';
+import 'package:zed/features/search/domain/use_cases/search_use_case.dart';
+import 'package:zed/features/search/presentation/bloc/search/search_bloc.dart';
 import 'package:zed/features/splash/data/data_sources/data_sources.dart';
 import 'package:zed/features/splash/data/splash_repo_impl/splash_repo_impl.dart';
 import 'package:zed/features/splash/domain/splash_repository/splash_repo.dart';
@@ -33,10 +40,12 @@ class DI {
   static Future<void> initializeDependencies() async {
     /// Dependencies
     sl.registerSingleton<FirebaseAuth>(FirebaseAuth.instance);
+    sl.registerSingleton<FirebaseFirestore>(FirebaseFirestore.instance);
     sl.registerSingleton<SplashDataSource>(SplashDataSource());
     sl.registerSingleton<AuthDataSource>(AuthDataSource(sl()));
     sl.registerSingleton<UserProfileServices>(UserProfileServices(sl()));
     sl.registerSingleton<PostServices>(PostServices());
+    sl.registerSingleton<SearchDataSource>(SearchDataSource(sl()));
 
     sl.registerSingleton<SplashRepository>(SplashRespositoryImpl(sl()));
     sl.registerSingleton<AuthenticationRepository>(
@@ -44,6 +53,7 @@ class DI {
     sl.registerSingleton<UserProfileRepository>(
         UserProfileRepositoryImpl(sl()));
     sl.registerSingleton<PostRepository>(PostRepositoryImpl(sl()));
+    sl.registerSingleton<SearchRepository>(SearchRepositoryImpl(sl()));
 
     /// Usecases
     sl.registerSingleton<CheckUserExistUseCase>(CheckUserExistUseCase(sl()));
@@ -59,6 +69,8 @@ class DI {
         UsernameValidateUseCase(sl()));
     sl.registerSingleton<CheckNewUserUseCase>(CheckNewUserUseCase(sl()));
     sl.registerSingleton<GetPostsUseCase>(GetPostsUseCase(sl()));
+    sl.registerSingleton<SearchUserUseCase>(SearchUserUseCase(sl()));
+    sl.registerSingleton<FetchPostsUseCase>(FetchPostsUseCase(sl()));
 
     /// Bloc
     sl.registerFactory<SplashBloc>(() => SplashBloc(sl()));
@@ -66,5 +78,6 @@ class DI {
         () => AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     sl.registerFactory<BottomnavigationBloc>(() => BottomnavigationBloc());
     sl.registerFactory<HomeBloc>(() => HomeBloc(sl()));
+    sl.registerFactory<SearchBloc>(() => SearchBloc(sl(), sl()));
   }
 }
